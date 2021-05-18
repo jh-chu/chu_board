@@ -1,2 +1,5 @@
-package org.jh.board.entity;public class BoardCategory {
+package org.jh.board.entity;
+
+public enum BoardCategory {
+    FREE, IMAGE, HUMOR
 }
