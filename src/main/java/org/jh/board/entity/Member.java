@@ -14,6 +14,7 @@ import java.util.List;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @ToString(exclude = "boardList")
+@Builder
 public class Member extends BaseEntity{
 
     @Id @GeneratedValue

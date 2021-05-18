@@ -11,6 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @ToString
+@Builder
 public class Board extends BaseEntity{
 
     @Id @GeneratedValue
