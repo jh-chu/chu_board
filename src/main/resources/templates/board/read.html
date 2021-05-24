@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko" 
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorator="layout/layout">
+
+    <th:block layout:fragment="content">
+        <div class="container">
+            <h2>title</h2>
+            <div class="float-left">
+                <span>작성자</span>
+                <span>등록일</span>
+                <span>조회수</span>
+            </div>
+            <div class="float-right">
+                <span>...</span>
+            </div>
+
+            <div>
+                content
+            </div>
+
+            <div>
+                추천, 첨부파일등
+            </div>
+        </div>
+    </th:block>
+
+</html>
