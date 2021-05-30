@@ -10,7 +10,7 @@ import java.util.List;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @Getter
-@ToString
+@ToString(exclude = "comments")
 @Builder
 public class Board extends BaseEntity{
 
@@ -28,6 +28,13 @@ public class Board extends BaseEntity{
     private BoardCategory category;
 
     @OneToMany(mappedBy = "board")
-    private List<Comment> commentList = new ArrayList<>();
+    private List<Comment> comments = new ArrayList<>();
 
+    public void changeTitle(String title) {
+        this.title = title;
+    }
+
+    public void changeContent(String content) {
+        this.content = content;
+    }
 }

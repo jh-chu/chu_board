@@ -35,25 +35,25 @@ class BoardServiceTest {
     @Autowired
     BoardRepository boardRepository;
 
-//    @BeforeAll
-//    public void insertData() {
-//        IntStream.rangeClosed(1,10).forEach(i->{
-//            Member member = Member.builder()
-//                    .email("cnwlsguq" + i + "@naver.com")
-//                    .nickname("츄" + i)
-//                    .build();
-//            memberRepository.save(member);
-//        });
-//
-//        IntStream.rangeClosed(1,100).forEach(i->{
-//            Board board = Board.builder()
-//                    .title("게시글 " + i + "번")
-//                    .content("게시글 " + i + "번째 내용입니다.")
-//                    .member(memberRepository.findByNickname("츄" + (i % 10)))
-//                    .build();
-//            boardRepository.save(board);
-//        });
-//    }
+    @BeforeAll
+    public void insertData1() {
+        IntStream.rangeClosed(1,10).forEach(i->{
+            Member member = Member.builder()
+                    .email("cnwlsguq" + i + "@naver.com")
+                    .nickname("츄" + i)
+                    .build();
+            memberRepository.save(member);
+        });
+
+        IntStream.rangeClosed(1,100).forEach(i->{
+            Board board = Board.builder()
+                    .title("게시글 " + i + "번")
+                    .content("게시글 " + i + "번째 내용입니다.")
+                    .member(memberRepository.findByNickname("츄" + ((i % 10)==0?10:i%10)))
+                    .build();
+            boardRepository.save(board);
+        });
+    }
 
     @Test
     @DisplayName("입력확인 테스트")

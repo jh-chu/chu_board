@@ -5,20 +5,24 @@
     layout:decorator="layout/layout">
 
     <th:block layout:fragment="content">
+        <h1>자유게시판</h1>
         <div class="container">
             <h2>title</h2>
-            <div class="float-left">
-                <span>작성자</span>
-                <span>등록일</span>
-                <span>조회수</span>
-            </div>
-            <div class="float-right">
-                <span>...</span>
+            <div class="title-bar" style="background-color: gray;">
+                <div class="float-left">
+                    <span th:text="${}">작성자</span>
+                    <span>등록일</span>
+                    <span>조회수</span>    
+                </div>
+                
+                <div class="float-right">
+                    <span>...</span>
+                </div>
             </div>
 
-            <div>
+            <article>
                 content
-            </div>
+            </article>
 
             <div>
                 추천, 첨부파일등

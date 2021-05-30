@@ -5,10 +5,11 @@ import lombok.*;
 import javax.persistence.*;
 
 @Entity
-@Setter
+@Builder
+@Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-@ToString
+@ToString(exclude = {"member","board"})
 public class Comment extends BaseEntity{
 
     @Id @GeneratedValue
